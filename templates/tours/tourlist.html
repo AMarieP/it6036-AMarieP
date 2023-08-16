@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %} 
+{% for tour in tourlist %} 
+    <div>
+        <h2>{{tour.name}}</h2>
+        <p>{{tour.author}}</p>
+        <p>{{tour.description}}}</p>
+    </div>
+{% endfor %}
+{% endblock content %}
