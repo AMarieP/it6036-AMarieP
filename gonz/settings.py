@@ -124,4 +124,8 @@ STATICFIELS_DIRS = [BASE_DIR / 'static']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#Allows using our custom user model
 AUTH_USER_MODEL = 'users.CustomUser'
+
+#Directs user to this URL after login
+LOGIN_REDIRECT_URL = "/"
