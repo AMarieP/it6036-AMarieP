@@ -11,6 +11,7 @@ class CustomUserCreationForm(UserCreationForm):
             "last_name",
             "email", 
             "position",
+            "department_type",
         )
         def save(self, commit=True):
             instance = super(CustomUserCreationForm, self).save(commit=False)
@@ -29,6 +30,7 @@ class CustomUserChangeForm(UserChangeForm):
             "password",
             "email", 
             "position",
+            "department_type",
         )
         def save(self, commit=True):
             instance = super(CustomUserCreationForm, self).save(commit=False)
