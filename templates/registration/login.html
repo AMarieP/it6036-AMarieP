@@ -17,17 +17,27 @@
                     <fieldset class="form-group">
                       <label class="control-label" for="id_{{ field.name }}">{{ field.label }}</label>
                         <div class="form-control">
-                          <input type="text" class="form-control"
-                            name="{{ field.name }}"
-                            id="id_{{ field.name }}"
-                            value="{{ field.value }}" > 
+                          {% if field.name == 'department_type' %}
                             <p class="help-text">{{ field.help_text }} </p>
-                           </div>
+                            <select class="form-select" name="{{ field.name }}"id="id_{{ field.name }}">
+                              {% for x, y in form.fields.customer.choices %}
+                              <option value="{{ x }}"{% if form.fields.DEPARTMENT_TYPE_CHOICES.value == x %} selected{% endif %}>{{ y }}</option>
+                              {% endfor %}
+                            </select>
+                          {% else %}
+                          <input type="{{field.type}}" class="form-control"
+                          name="{{ field.name }}"
+                          id="id_{{ field.name }}"
+                          value="{{ field.value }}" > 
+                          <p class="help-text">{{ field.help_text }} </p>
+                           {% endif %}
+                          </div>
                     </fieldset>
                     {% endfor %}
                        <input type="submit" value="Submit"  class="btn btn-primary">
                     </form>
                 </div>
+
               </div>
             </div>
           </div>
