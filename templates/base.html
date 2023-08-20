@@ -15,8 +15,8 @@
         </a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link" href="#">Agents</a>
-            <a class="nav-link" href="#">Tours</a>
+            <a class="nav-link" href="{% url 'agents' %}">Agents</a>
+            <a class="nav-link" href="{% url 'tours' %}">Tours</a>
             {% if user.is_authenticated %}
             <span class="navbar-text">
               Hi, {{ user.username }}
