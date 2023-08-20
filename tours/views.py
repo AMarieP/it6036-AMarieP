@@ -6,6 +6,7 @@ class TourListView(ListView):
     template_name = "tours/tourlist.html"
 
 class TourView(DetailView):
+    model = Tour
     template_name = "tours/tour.html"
 
 class AgentListView(ListView):
@@ -13,4 +14,5 @@ class AgentListView(ListView):
     template_name = "tours/tourlist.html"
 
 class AgentView(DetailView):
+    model = Agent
     template_name = "tours/tour.html"

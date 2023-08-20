@@ -19,3 +19,8 @@ class CustomUser(AbstractUser):
     department_type = models.CharField(max_length=14,
                                         choices=DEPARTMENT_TYPE_CHOICES,
                                         default=AGENT)
+    
+    def firstname(self):  
+        return self.first_name
+    def lastname(self):  
+        return self.last_name
