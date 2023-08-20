@@ -1,11 +1,25 @@
-<!-- templates/home.html TESTING TEMPLATE -->
+<!-- templates/home.html-->
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col">
+      <h1 class="display-2">Welcome to Go NZ Travel Website</h1>
+      <p>Please look around at stuff and somethings</p>
+    </div>
+    <div class="col">
+      <img src="{% static 'images/header.jpg'%}" class="img-thumbnail" alt="picture of auckland motorway at night ">
+    </div>
+  </div>
+</div>
+<div class="container">
+  
+</div>
 {% else %}
   <p>You are not logged in</p>
   <a href="{% url 'login' %}">Log In</a>
