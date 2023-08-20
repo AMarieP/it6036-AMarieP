@@ -20,7 +20,7 @@ class CustomUserAdmin(UserAdmin):
             'fields': ('first_name', 'last_name')
         }),
         ('Staff Information', {
-            'fields': ('position', 'department_type')
+            'fields': ('position', 'department_type', 'is_staff', 'is_superuser')
         }),
     )
 
@@ -32,7 +32,7 @@ class CustomUserAdmin(UserAdmin):
             'fields': ('first_name', 'last_name')
         }),
         ('Staff Information', {
-            'fields': ('position', 'department_type')
+            'fields': ('position', 'department_type', 'is_staff', 'is_superuser')
         }),
     )
 
