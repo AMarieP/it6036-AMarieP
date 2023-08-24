@@ -1,0 +1,21 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<img src="{% static 'images/header.jpg'%}" class="img-thumbnail" alt="picture of auckland motorway at night ">
+<div class="container text-center">
+  <h1 class="display-2">Welcome to Go NZ Travel Website</h1>
+      <p>Welcome to NZGo, your ultimate travel companion for exploring the wonders of New Zealand! <br>Designed exclusively for our dedicated staff, NZGo is your all-in-one travel solution, crafted to enhance your travel experiences across this beautiful country. <br>
+        With NZGo, you can effortlessly plan, organize, and navigate your journeys through New Zealand's diverse landscapes. Access real-time information on accommodations, attractions, and transportation options. 
+        <br>Seamlessly create itineraries that cater to your unique preferences and interests, ensuring each trip is tailored to perfection.</p>
+    </div>
+</div>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<body>
+    {% if tour_list %}
+    <div class="container px-4">
+        <div class="row">
+          <div class="col">
+            <br>
+            <ul>
+                {% for tour in tour_list %} 
+                <div class="card">
+                    <div class="card-body">
+                        <a href="{% url 'tour_detail' tour.id %}"><h2 class="card-title">{{tour.name}}</h2></a>
+                      <h6 class="card-subtitle mb-2 text-body-secondary">Tour Agent: {{tour.author}}</h6>
+                      <p class="card-text">{{tour.description}}}</p>
+                    </div>
+                  </div>
+                  <br>
+                {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    {% else %}
+    <p> No tours available</p>
+    {% endif %}
+</body>
+
+{% endblock content %}

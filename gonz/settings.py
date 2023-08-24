@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users.apps.UsersConfig',
+    'tours.apps.ToursConfig',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,7 @@ ROOT_URLCONF = 'gonz.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,7 +120,16 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFIELS_DIRS = [BASE_DIR / 'static']
 
+STATIC_URL = "static/"
+STATICFILES_DIRS = [BASE_DIR / "static"] 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Allows using our custom user model
+AUTH_USER_MODEL = 'users.CustomUser'
+
+#Directs user to this URL after login
+LOGIN_REDIRECT_URL = "/"
